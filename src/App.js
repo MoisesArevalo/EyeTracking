@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, {useEffect,useState,Component} from 'react';
 import {axios} from 'axios';
-import Upload from './views/components/UploadBox'
+import Upload from './views'
 const App = () =>{
   return(
     <Upload />
@@ -11,7 +11,30 @@ const App = () =>{
 
 // class App extends Component {
 //   state = {
-//     selectFile: null
+//     selectFile: nulluseEffect(() => {
+//     const webgazer = window.webgazer;
+//     webgazer.setGazeListener((data, clock) => {
+//       console.log(data, clock);
+//     }).begin();
+//
+//   }, [imageEnable]);
+//   return (
+//       <div>
+//           <h1>
+//             EyeTracking
+//           </h1>
+//           <h3>
+//             Cargar la imagen para analizar
+//           </h3>
+//           <div>
+//               <input type="file" onChange={onFileChange} />
+//               <button onClick={onFileUpload}>
+//                 Cargar
+//               </button>
+//           </div>
+//         {this.fileData()}
+//       </div>
+//     );
 //   };
 //
 //   onFileSelected = event => {
@@ -106,42 +129,7 @@ const App = () =>{
 // }
 
 // function App() {
-//   const [fileName , setFileName] = useState();
-//   const [imageEnable, setImageEnable] = useState(false);
-//   const onFileSelected = (event) => {
-//     setFileName(event.target.files);
-//   };
-//   const onFileUpdate = (event) => {
-//     const formData = new FormData();
 //
-//     // Update the formData object
-//     formData.append(
-//       "myFile",
-//       fileName,
-//       fileName.name
-//     );
-//
-//     // Details of the uploaded file
-//     console.log(fileName);
-//   }
-//   const fileData = () => {
-//     if (this.state.selectedFile) {
-//
-//       return ( <  div >
-//         <h2 > File Details: < /h2>
-//         <p > File Name: {  fileName.name  } < /p>
-//         <  p > File Type: {  fileName.type  } < /p>
-//         <p >  Last Modified: {  " "  } {fileName.lastModifiedDate.toDateString()} </p>
-//         <  /div>
-//       );
-//     } else {
-//       return ( <div >
-//         <  br / >
-//         <  h4 > Choose before Pressing the Upload button < /h4>
-//         <  /div>
-//       );
-//     }
-//   };
 //   useEffect(() => {
 //     const webgazer = window.webgazer;
 //     webgazer.setGazeListener((data, clock) => {

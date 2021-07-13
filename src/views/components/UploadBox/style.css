@@ -1,15 +1,19 @@
 .uploadContainer{
-  position: relative;
-   
-  width: 500px;
-  height: 500px;
-  background: red;
-
+  background : #EEEEFF;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 50px;
 }
-.uploaded >div{
-
+.uploadContainer *{
+  padding: 10px;
 }
-.uploadContainer> div >*{
-  display: block;
-
+.uploadFile{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+}
+.uploadBox--disable{
+  visibility: hidden;
 }

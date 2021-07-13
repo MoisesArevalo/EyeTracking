@@ -1,0 +1,14 @@
+.imageBackground {
+  min-width: 100%;
+  min-height: 25%;
+  background-size: cover;
+  background-position: center;
+}
+.image {
+  position: fixed;
+}
+.total {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+}
