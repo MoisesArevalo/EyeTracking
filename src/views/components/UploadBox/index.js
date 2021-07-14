@@ -1,6 +1,6 @@
 import {useState} from "react";
 import "./style.css"
-export default function UploadBox({onUpload, onStartTracker, isVisibleUpload, onTimeImage}){
+export default function UploadBox({onUpload, onStartTracker, isVisibleUpload, onTimeImage, time}){
   const [fileSelected, setFileSelected]= useState("");
 
   return (
@@ -10,12 +10,16 @@ export default function UploadBox({onUpload, onStartTracker, isVisibleUpload, on
       <div className="uploadFile">
 
         <input type="file" onChange={onUpload} multiple/>
-        <button > Cargar imagen </button>
+
       </div>
-      <label for="tiempo">Tiempo entre cada imagen</label>
-      <input type="range" min="5" max="15" step="5" onChange={onTimeImage}/>
+
       <button onClick={onStartTracker}>Iniciar</button>
 
     </div>
   );
 }
+// <label for="tiempo">Tiempo entre cada imagen</label>
+// <input className="rangeSecond" type="range" min="5" max="15" step="5" onChange={onTimeImage}/>
+// <div className="tagTime">
+//   <label for="second">{time} segundos. </label>
+// </div>

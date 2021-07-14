@@ -1,19 +1,18 @@
 import {useState, useEffect} from "react";
-import "./style.css"
- export default function BackgroundImage({image, visible}){
+import "./style.css";
 
-       const webgazer = window.webgazer;
-       console.log(visible);
-       if(visible){
-         webgazer.setGazeListener((data, clock) => {
-           console.log(data, clock);
-         }).begin();
-       }
+export default function BackgroundImage({image, visible, onNextImage, onAdd}){
 
 
      return (
-       <div className={`imageBackground ${visible ? "total":""}`}>
-         <img class="image" src={image}></img>
-       </div>
+
+
+        <div className={`imageBackground ${visible ? "total":""}`}>
+          <img className="image" src={image}></img>
+          <button className={`nextButtom ${!visible ? "disable":""}`} onClick={onNextImage}>Siguiente Imagen</button>
+        </div>
+
+
        );
  }
+// ReactDOM.render(<DemoCarousel />, document.querySelector('.demo-carousel'));

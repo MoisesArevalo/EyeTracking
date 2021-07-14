@@ -17,3 +17,7 @@
 .uploadBox--disable{
   visibility: hidden;
 }
+.tagTime{
+  text-align: center;
+  font-size: 0.75rem;
+}
