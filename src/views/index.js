@@ -3,6 +3,7 @@ import BackgroundImage from './components/BackgroundImage';
 import DownloadFile from './components/DownloadFile';
 import {useState, useEffect} from "react";
 import './style.css'
+var dataTest =[]
 export default function Upload(){
   const [isVisibleUpload, setVisibleUpload] = useState(false);
   const [isDownload, setDownload] = useState(true);
@@ -35,11 +36,10 @@ export default function Upload(){
     }
     //return(data.x);
   });
-  var dataTest =[]
+
 
   const handleStartTracker = () =>{
     setVisibleUpload(true);
-    setDownload(false);
     setImages(imageList[position]);
 
     if(!isVisibleUpload){
@@ -59,7 +59,7 @@ export default function Upload(){
 
       }
       setVisibleUpload(false);
-      setDownload(true);
+      setDownload(false);
       console.log("------> "+dataTest.length);
 
     }
@@ -72,7 +72,7 @@ export default function Upload(){
     <div className={`uploadBox ${isVisibleUpload ? "image":""}`} >
 
       <UploadBox onUpload={handleUploadFile} onStartTracker={handleStartTracker} isVisibleUpload={isVisibleUpload} onTimeImage={handleTimeImage} time={time} />
-      {isDownload ? <DownloadFile list={dataTest} isVisible={isDownload}/> : ""}
+      {!isDownload ? <DownloadFile list={dataTest} isVisible={isDownload}/> : ""}
 
       <BackgroundImage image={image} visible={isVisibleUpload} onNextImage={handleNextImage} onAdd={handleAdd}/>
 
